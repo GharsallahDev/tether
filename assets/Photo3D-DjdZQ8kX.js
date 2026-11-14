@@ -1,4 +1,4 @@
-var G=Object.defineProperty;var O=(t,a,n)=>a in t?G(t,a,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[a]=n;var X=(t,a,n)=>O(t,typeof a!="symbol"?a+"":a,n);import{r as i,j as c}from"./index-C0lN99m0.js";import{C as W,a as A,u as _}from"./react-three-fiber.esm-Bl5TNzcW.js";import{t as H,N,x as q,L as Y,P as J,a as K,y as B,V as Q,z as F}from"./three.module-B6JfyAZl.js";const L=256;function Z(t){const a=t.split("/").pop()??"";return/^N[LR][AB]_/.test(a)?45:/DXXX/.test(a)||/M[LR]\d/.test(a)?30:40}const $=`
+var G=Object.defineProperty;var O=(t,a,n)=>a in t?G(t,a,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[a]=n;var X=(t,a,n)=>O(t,typeof a!="symbol"?a+"":a,n);import{r as i,j as c}from"./index-BlUEJZEu.js";import{C as W,a as A,u as _}from"./react-three-fiber.esm-BtXC1YpA.js";import{t as H,N,x as q,L as Y,P as J,a as K,y as B,V as Q,z as F}from"./three.module-B6JfyAZl.js";const L=256;function Z(t){const a=t.split("/").pop()??"";return/^N[LR][AB]_/.test(a)?45:/DXXX/.test(a)||/M[LR]\d/.test(a)?30:40}const $=`
   uniform sampler2D uDepth;
   uniform vec2 uTan;        // tan(half fov) x, y of the source photo
   uniform float uInvNear;
