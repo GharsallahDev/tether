@@ -1,0 +1,257 @@
+{
+ "cw": 89,
+ "ch": 89,
+ "step": 12,
+ "x0": 6,
+ "y0": 6,
+ "res": 3,
+ "maxValue": 63,
+ "top": [
+  {
+   "cell": 608058,
+   "value": 48,
+   "slack": 0.027801653370261192,
+   "plan": {
+    "stops": [
+     6,
+     8,
+     7,
+     2,
+     3,
+     4
+    ],
+    "value": 48,
+    "totalTime": 16679.484294891357,
+    "walkTime": 5879.4842948913565,
+    "minReserve": 0.227801653014289,
+    "tightestStop": 5,
+    "verified": {
+     "pass": true,
+     "totalTime": 16679.484252929688,
+     "minMargin": 0.2278016542505335,
+     "energy": 2036540.125,
+     "distance": 3466.1303012523927
+    }
+   },
+   "stopsCells": [
+    693356,
+    909874,
+    919492,
+    386387,
+    554766,
+    559029
+   ]
+  },
+  {
+   "cell": 851262,
+   "value": 48,
+   "slack": 0.027508901432156563,
+   "plan": {
+    "stops": [
+     8,
+     7,
+     6,
+     4,
+     3,
+     2
+    ],
+    "value": 48,
+    "totalTime": 16685.807762145996,
+    "walkTime": 5885.807762145996,
+    "minReserve": 0.22750889990064832,
+    "tightestStop": 5,
+    "verified": {
+     "pass": true,
+     "totalTime": 16685.807762145996,
+     "minMargin": 0.22750889990064832,
+     "energy": 2079758.9287109375,
+     "distance": 3471.2257556818986
+    }
+   },
+   "stopsCells": [
+    909874,
+    919492,
+    693356,
+    559029,
+    554766,
+    386387
+   ]
+  },
+  {
+   "cell": 646530,
+   "value": 48,
+   "slack": 0.027378108352422714,
+   "plan": {
+    "stops": [
+     6,
+     8,
+     7,
+     4,
+     3,
+     2
+    ],
+    "value": 48,
+    "totalTime": 16688.63289642334,
+    "walkTime": 5888.63289642334,
+    "minReserve": 0.2273781066470676,
+    "tightestStop": 5,
+    "verified": {
+     "pass": true,
+     "totalTime": 16688.632804870605,
+     "minMargin": 0.22737809198874015,
+     "energy": 2137529.8818359375,
+     "distance": 3688.578136148397
+    }
+   },
+   "stopsCells": [
+    693356,
+    909874,
+    919492,
+    559029,
+    554766,
+    386387
+   ]
+  },
+  {
+   "cell": 544134,
+   "value": 48,
+   "slack": 0.027283217757940292,
+   "plan": {
+    "stops": [
+     3,
+     4,
+     6,
+     8,
+     7,
+     2
+    ],
+    "value": 48,
+    "totalTime": 16690.48196029663,
+    "walkTime": 5890.481960296631,
+    "minReserve": 0.22729250183811894,
+    "tightestStop": 5,
+    "verified": {
+     "pass": true,
+     "totalTime": 16690.080978393555,
+     "minMargin": 0.22731106298941153,
+     "energy": 2066592.16796875,
+     "distance": 3471.880517890342
+    }
+   },
+   "stopsCells": [
+    554766,
+    559029,
+    693356,
+    909874,
+    919492,
+    386387
+   ]
+  },
+  {
+   "cell": 672054,
+   "value": 48,
+   "slack": 0.027041083201766014,
+   "plan": {
+    "stops": [
+     6,
+     8,
+     7,
+     2,
+     3,
+     4
+    ],
+    "value": 48,
+    "totalTime": 16695.91262435913,
+    "walkTime": 5895.91262435913,
+    "minReserve": 0.2270410822055958,
+    "tightestStop": 5,
+    "verified": {
+     "pass": true,
+     "totalTime": 16695.912521362305,
+     "minMargin": 0.22704108485469113,
+     "energy": 2055587.8359375,
+     "distance": 3490.9831149947768
+    }
+   },
+   "stopsCells": [
+    693356,
+    909874,
+    919492,
+    386387,
+    554766,
+    559029
+   ]
+  }
+ ],
+ "key": "[80,60,15,25,3.71,20,0.92,false,[88407,123590,386387,554766,559029,680553,693356,919492,909874]][6,20,30,[6,4,8,9,10,5,7,6,8],12]",
+ "ms": 6133.882667,
+ "fieldsMs": 4175.340416999999,
+ "dpMs": 46.029750000000604,
+ "candidates": 3372,
+ "file": "base_siting.bin",
+ "params": {
+  "bodyMass": 80,
+  "suitMass": 60,
+  "loadOut": 15,
+  "loadBack": 25,
+  "g": 3.71,
+  "maxSlopeDeg": 20,
+  "maxSpeed": 0.92,
+  "levelGravityScaling": false
+ },
+ "budget": {
+  "evaHours": 6,
+  "reservePct": 20,
+  "workMinPerStop": 30
+ },
+ "generated": "2026-11-14",
+ "terrainFactor": false,
+ "targets": [
+  {
+   "id": "mammoth-lakes",
+   "cell": 88407,
+   "value": 6
+  },
+  {
+   "id": "kings-canyon",
+   "cell": 123590,
+   "value": 4
+  },
+  {
+   "id": "altadena",
+   "cell": 386387,
+   "value": 8
+  },
+  {
+   "id": "monte-grande-valle-de-la-luna",
+   "cell": 554766,
+   "value": 9
+  },
+  {
+   "id": "nevado-sajama",
+   "cell": 559029,
+   "value": 10
+  },
+  {
+   "id": "antofagasta-crater",
+   "cell": 680553,
+   "value": 5
+  },
+  {
+   "id": "campo-marte",
+   "cell": 693356,
+   "value": 7
+  },
+  {
+   "id": "basque-lakes",
+   "cell": 919492,
+   "value": 6
+  },
+  {
+   "id": "nazca",
+   "cell": 909874,
+   "value": 8
+  }
+ ],
+ "format": "Uint8 value plane (cw*ch, row-major, 255 = not a candidate) then Uint8 slack plane (percent of EVA left, 255 = none). Lattice (cx,cy) -> planning cell (x0+cx*step, y0+cy*step)."
+}
