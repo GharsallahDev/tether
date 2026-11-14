@@ -2,71 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TETHER · Mount Sharp in AR</title>
-<meta name="description" content="Put Curiosity's boxwork region on Mount Sharp, with a planned Marswalk, on the table in front of you.">
-<link rel="icon" href="tether.svg">
-<style>
-  :root { --bg:#0a0b0d; --panel:#111317; --line:#232831; --text:#ebe6dd; --muted:#9aa1ab; --mars:#e0703a; --cyan:#7fe3ff; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.5 Inter, system-ui, -apple-system, sans-serif; }
-  main { max-width: 560px; margin: 0 auto; padding: 28px 16px 40px; }
-  .logo { font:800 22px/1 ui-monospace, Menlo, monospace; letter-spacing:.28em; color:var(--mars); }
-  h1 { font-size: 26px; line-height: 1.2; margin: 14px 0 8px; }
-  p { color: var(--muted); margin: 0 0 14px; }
-  .poster { display:block; width:100%; border-radius:14px; border:1px solid var(--line); background:#1a1d22; }
-  .btn { display:block; text-align:center; margin: 18px 0 10px; padding: 16px; border-radius: 12px; font-weight: 700; font-size: 18px; text-decoration:none;
-         background: var(--cyan); color: #04212b; }
-  .btn.alt { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 600; font-size: 15px; }
-  .note { font-size: 13px; }
-  .legend { display:grid; grid-template-columns: 18px 1fr; gap: 6px 10px; font-size: 14px; color: var(--muted); margin: 14px 0; }
-  .sw { width: 14px; height: 14px; border-radius: 3px; margin-top: 4px; }
-  .hidden { display: none; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TETHER · Mars in your room</title>
+<meta name="description" content="Scan your floor and walk around Curiosity's boxwork region on Mount Sharp, with a planned Marswalk.">
+<link rel="icon" href="./tether.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@600;800&display=swap">
+  <script type="module" crossorigin src="./assets/ar-BLneOB30.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/three.module-C8kRhvaC.js">
+  <link rel="stylesheet" crossorigin href="./assets/ar-CaIM2aq_.css">
 </head>
 <body>
-<main>
-  <div class="logo">TETHER</div>
-  <h1>Mount Sharp, on your table</h1>
-  <p>Real terrain of Curiosity’s boxwork region on Mars, with a planned Marswalk and the zone from which the crew can still walk home.</p>
+  <main id="landing">
+    <div class="logo">TETHER</div>
+    <h1>Mars in your room</h1>
+    <p class="lead">Scan your floor, then walk around Curiosity’s boxwork region on Mount Sharp: real terrain spread across your room, with a planned Marswalk glowing on the ground.</p>
+    <img class="poster" src="./data/ar/poster.jpg" alt="Mount Sharp terrain model with a planned route">
+    <div id="actions"></div>
+    <div class="legend">
+      <span class="sw" style="background:#7fe3ff"></span><span>Planned route, the habitat and its beacon</span>
+      <span class="sw" style="background:#ffb35c"></span><span>Science stops: real Curiosity drill sites</span>
+      <span class="sw" style="background:#4fd18b"></span><span>Inside the tether: the crew can still walk home with its reserve</span>
+      <span class="sw" style="background:#96141a"></span><span>Beyond the tether</span>
+    </div>
+    <p class="note" id="how"></p>
+    <p class="note">Terrain: USGS MSL Gale 1 m DEM and HiRISE colour (NASA/JPL/University of Arizona). Room scale: about 1.2 km of Mars shown 6 m wide, true height. Demo plan: habitat near Curiosity’s sol 4600 position; stops at Altadena, Nevado Sajama and Campo Marte. Not affiliated with NASA.</p>
+    <a class="link" href="./">Open the full TETHER planner →</a>
+  </main>
 
-  <a id="ios" class="hidden" rel="ar" href="data/ar/tether_demo.usdz"><img class="poster" src="data/ar/poster.jpg" alt="3D model of Mount Sharp terrain with a planned route"></a>
-  <img id="poster" class="poster" src="data/ar/poster.jpg" alt="3D model of Mount Sharp terrain with a planned route">
-
-  <a id="go" class="btn" href="#">Open in AR</a>
-  <a class="btn alt" href="./">Open the full TETHER planner</a>
-
-  <div class="legend">
-    <span class="sw" style="background:#7fe3ff"></span><span>Planned route, and the habitat with its beacon</span>
-    <span class="sw" style="background:#ffb35c"></span><span>Science stops: real Curiosity drill sites</span>
-    <span class="sw" style="background:#4fd18b"></span><span>Inside the tether: the crew can still walk home with its reserve</span>
-    <span class="sw" style="background:#96141a"></span><span>Beyond the tether</span>
+  <div id="overlay" hidden>
+    <div class="top">
+      <div class="chip mono">TETHER · MOUNT SHARP</div>
+      <button id="exit" class="ghost">Exit</button>
+    </div>
+    <div id="hint" class="hint">Scanning the floor… move your phone slowly</div>
+    <div class="bottom">
+      <div id="controls" hidden>
+        <button id="rotL">⟲</button>
+        <button id="size" class="mono">6 m</button>
+        <button id="rotR">⟳</button>
+        <button id="move" class="ghost">Move</button>
+      </div>
+      <button id="place" class="primary" hidden>Place Mars here</button>
+    </div>
   </div>
-  <p class="note" id="how"></p>
-  <p class="note">Terrain: USGS MSL Gale 1 m DEM and HiRISE colour (NASA/JPL/University of Arizona), shown about 1.2 km wide at 0.5 m, height ×1.5. Demo plan: habitat near Curiosity’s sol 4600 position, stops at Altadena, Nevado Sajama and Campo Marte. Not affiliated with NASA.</p>
-</main>
-<script>
-  (function () {
-    var ua = navigator.userAgent;
-    var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    var android = /Android/i.test(ua);
-    var go = document.getElementById('go'), how = document.getElementById('how');
-    var glb = new URL('data/ar/tether_demo.glb', location.href).href;
-    if (ios) {
-      var a = document.getElementById('ios');
-      a.classList.remove('hidden'); document.getElementById('poster').classList.add('hidden');
-      go.href = 'data/ar/tether_demo.usdz'; go.setAttribute('rel', 'ar');
-      go.addEventListener('click', function (e) { e.preventDefault(); a.click(); });
-      how.textContent = 'iPhone/iPad: tap “Open in AR”, point the camera at a table, then walk around the model.';
-    } else if (android) {
-      go.href = 'intent://arvr.google.com/scene-viewer/1.2?file=' + encodeURIComponent(glb) + '&mode=ar_preferred&title=' + encodeURIComponent('TETHER · Mount Sharp') +
-        '#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=' + encodeURIComponent(location.href) + ';end;';
-      how.textContent = 'Android: tap “Open in AR” (uses Google’s built-in Scene Viewer), point the camera at a table.';
-    } else {
-      go.href = 'data/ar/tether_demo.glb'; go.textContent = 'Download the 3D model (.glb)';
-      how.textContent = 'On a computer: scan this page’s QR code with a phone to see it in AR, or download the model.';
-    }
-  })();
-</script>
 </body>
 </html>
